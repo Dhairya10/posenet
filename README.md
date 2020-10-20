@@ -1,55 +1,31 @@
-# TensorFlow Lite PoseNet Android Demo
-### Overview
-This is an app that continuously detects the body parts in the frames seen by
- your device's camera. These instructions walk you through building and running
- the demo on an Android device. Camera captures are discarded immediately after
- use, nothing is stored or saved.
+# PoseNet
 
-![Demo Image](posenetimage.png)
+## Project Overview
+This project uses the PoseNet model for pose estimation on an Android application.
 
-## Build the demo using Android Studio
+The app uses the front camera of the mobile phone and estimates the pose of the driver sitting inside the car.
+A score is generated based on the visibility and confidence of the keypoints.
 
-### Prerequisites
+![Screenshot 2020-10-20 at 2 32 17 PM](https://user-images.githubusercontent.com/36099337/96565209-b6474e00-12e1-11eb-93a1-5d28978e98f7.png =250x)
 
-* If you don't have it already, install **[Android Studio](
- https://developer.android.com/studio/index.html)** 3.2 or
- later, following the instructions on the website.
+Working of the app can be seen [here](https://youtu.be/3DU02xnbQV8).
 
-* Android device and Android development environment with minimum API 21.
+## PoseNet Model
 
-### Building
-* Open Android Studio, and from the `Welcome` screen, select
-`Open an existing Android Studio project`.
+The PoseNet model estimates the pose based on the presence/absence of keypoints. The keypoints used in this example are as follows.
 
-* From the `Open File or Project` window that appears, navigate to and select
- the `tensorflow-lite/examples/posenet/android` directory from wherever you
- cloned the TensorFlow Lite sample GitHub repo. Click `OK`.
+    NOSE,  
+    LEFT_EYE,  
+    RIGHT_EYE,  
+    LEFT_EAR,  
+    RIGHT_EAR,  
+    LEFT_SHOULDER,  
+    RIGHT_SHOULDER,  
+    LEFT_ELBOW,  
+    RIGHT_ELBOW
 
-* If it asks you to do a `Gradle Sync`, click `OK`.
+A keypoint confidence score is returned for each keypoint and its average is taken as the final score.
 
-* You may also need to install various platforms and tools, if you get errors
- like `Failed to find target with hash string 'android-21'` and similar. Click
- the `Run` button (the green arrow) or select `Run` > `Run 'android'` from the
- top menu. You may need to rebuild the project using `Build` > `Rebuild Project`.
+## References
 
-* If it asks you to use `Instant Run`, click `Proceed Without Instant Run`.
-
-* Also, you need to have an Android device plugged in with developer options
- enabled at this point. See **[here](
- https://developer.android.com/studio/run/device)** for more details
- on setting up developer devices.
-
-
-### Model used
-Downloading, extraction and placement in assets folder has been managed
- automatically by `download.gradle`.
-
-If you explicitly want to download the model, you can download it from
- **[here](
- https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite)**.
-
-### Additional Note
-_Please do not delete the assets folder content_. If you explicitly deleted the
- files, then please choose `Build` > `Rebuild` from menu to re-download the
- deleted model files into assets folder.
-
+https://github.com/tensorflow/examples/tree/master/lite/examples/posenet/android
