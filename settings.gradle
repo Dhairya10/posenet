@@ -1,0 +1,3 @@
+include ':posenet_lib'
+rootProject.name = 'TFLite PoseNet Demo App'
+include ':app', ':posenet'
