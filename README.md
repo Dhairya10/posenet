@@ -6,7 +6,7 @@ This project uses the PoseNet model for pose estimation on an Android applicatio
 The app uses the front camera of the mobile phone and estimates the pose of the driver sitting inside the car.
 A score is generated based on the visibility and confidence of the keypoints.
 
-![Screenshot 2020-10-20 at 2 32 17 PM](https://user-images.githubusercontent.com/36099337/96565209-b6474e00-12e1-11eb-93a1-5d28978e98f7.png =250x)
+<a href="url"><img src="https://user-images.githubusercontent.com/36099337/96565209-b6474e00-12e1-11eb-93a1-5d28978e98f7.png" align="center" height="500" width="250" ></a>
 
 Working of the app can be seen [here](https://youtu.be/3DU02xnbQV8).
 
